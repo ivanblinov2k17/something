@@ -92,12 +92,8 @@ void MainWindow::on_pushButton_clicked()
 
 
     char* sos = new char[512];
-    for(int i=0;i<utf8_text.length();++i)
-    {
-        sos[i]=utf8_text[i];
-
-    }
-    qDebug()<<crypt_message(utf8_text,27);
+    sos=crypt_message(utf8_text,27);
+    qDebug()<<sos;
 
     socket->write(sos);
 }
